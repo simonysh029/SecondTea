@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script>
+	
+	function ajax() {
+		var data = new Date().toString();
+		var req = new XMLHTttpRequest();
+		req.onreadystatechange = function() {
+			if(req.readyState == 4) {
+				if(req.status == 200) {
+					var newdata = JSON.parse(this.response);
+					var ea = newsdata.length;
+					var w = 0;
+					var html = document.getElementById("news");
+						html.innerHTML = "" ;	//html 코드 초기화
+					while(w < ea) {
+						html.innerHTML += '
+						<tr>
+							<td> ' + newsdata[w][0] + ' </td>
+							<td> ' + newsdata[w][1] + ' </td>
+						</tr>
+						';
+						w++;
+					}
+				}
+				else {
+					
+				}
+			}
+		}
+	}
+	
+</script>
+
+
+</body>
+</html>
